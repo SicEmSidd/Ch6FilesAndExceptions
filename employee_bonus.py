@@ -11,10 +11,12 @@ while menu_input != "close":
     for record in csv_file:
         if menu_input == "close":
             break
-        print("Employee Name: " +record[1] + " " + record[2], sep = '')
-        print("Employee Salary: $" +record[3], sep = '')
+        print(f"Employee Name: {record[1]} {record[2]}")
+        print(f"Employee Salary: ${float(record[3]):10,.2f}")
         #the bonus is calculated by the percent times the salary
-        print("Employee Bonus: $" +str(round(float(record[4])*float(record[3]))), sep = '')
+        print(f"Employee Bonus:  ${round(float(record[4])*float(record[3])):10,.2f}")
+        print(f"Employee Pay:    $ {round(float(record[4])*float(record[3])+float(record[3])):1,.2f}")
         menu_input = str(input("Press any button to continue, or type 'close' to exit the program. "))
+    break
 print("Thanks for using my program!")
 employees.close()
